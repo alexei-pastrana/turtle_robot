@@ -1,0 +1,13 @@
+<!--
+Proyecto: Toggle LED desde ROS hacia Arduino Uno
+Autor: Jesús López
+Fecha: 25/11/2025
+-->
+<launch>
+    <node pkg="rosserial_python" type="serial_node.py" name="rosserial_node" output="screen">
+        <param name="port" value="/dev/arduino"/>
+        <param name="baud" value="57600"/>
+    </node>
+    
+    <node pkg="turtle_robot" type="remote_led.py" name="remote_led_publisher" output="screen"/>
+</launch>
